@@ -14,7 +14,7 @@
 # define FDF_H
 
 # include "../libft/libft.h"
-# include <mlx.h>
+# include "../minilibx_macos/mlx.h"
 # include <math.h>
 
 # define R_MIN 89

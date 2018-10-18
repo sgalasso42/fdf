@@ -33,7 +33,7 @@ OBJ = $(SRC:.c=.o)
 
 INCLUDES = includes/
 
-MLX = -lmlx -framework OpenGL -framework AppKit
+MLX = -L ./minilibx_macos -l mlx -framework OpenGL -framework AppKit
 
 all: lib $(NAME)
 
@@ -42,6 +42,7 @@ $(NAME):	$(OBJ)
 
 lib:
 	make -C libft/
+	make -C minilibx_macos/
 
 %.o: %.c $(INCLUDES)fdf.h Makefile
 	gcc -Wall -Wextra -Werror -o $@ -c $<
