@@ -1,5 +1,6 @@
 # fdf
 A field visualization interface
+![](fdf_demo.png)
 ## Built with
 C language, Mlx library
 ## Installing
