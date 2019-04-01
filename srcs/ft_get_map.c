@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 00:19:37 by sgalasso          #+#    #+#             */
-/*   Updated: 2018/09/14 15:03:27 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/01 23:10:12 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,12 @@ int		ft_parse_map(t_map *map, char *line, int fd)
 	return (1);
 }
 
-int		ft_get_map(t_map *map, char **argv, int fd)
+int		ft_get_map(t_map *map, char **argv)
 {
+	int		fd;
 	char	*line;
 
+	fd = 0;
 	if ((!ft_init_map(map)) || (!ft_init_params(map)))
 		return (0);
 	if ((fd = open(argv[1], O_RDONLY)) == -1)

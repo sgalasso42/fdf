@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2018/09/14 15:03:30 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 00:04:45 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "../libft/libft.h"
 # include "../minilibx_macos/mlx.h"
 # include <math.h>
+# include <stdio.h>
 
 # define R_MIN 89
 # define G_MIN 229
@@ -81,16 +82,20 @@ typedef struct		s_map
 	int			color;
 }					t_map;
 
+void				display_hud(t_map *map);
+void				make_frame(t_map *map);
+void				ft_error_exit(char *str, t_map *map);
+void				ft_nbr_string_put(int x, int y, int nb, t_map *map);
+void				ft_init_fdf(t_map *map);
 int					ft_exit(t_map *map);
 int					*ft_intdup(t_map *map, int *src);
 int					ft_init_params(t_map *map);
 int					ft_init_map(t_map *map);
-int					ft_get_map(t_map *map, char **argv, int fd);
+int					ft_get_map(t_map *map, char **argv);
 int					ft_check_map(t_map *map);
 void				ft_draw_line(t_pos *a, t_pos *b, t_map *map, int color);
 void				ft_set_grid(t_map *map);
 void				ft_set_inputs(t_map *map);
-void				ft_set_infos(t_map *map);
 int					ft_display_grid(t_map *map);
 void				ft_free_grid(t_map *map);
 void				ft_free_map(t_map *map);
@@ -111,13 +116,6 @@ int					ft_key(int key, t_map *map);
 void				ft_key_z(int key, t_map *map);
 void				ft_key_minus(t_map *map);
 void				ft_key_plus(t_map *map);
-void				ft_key_right(t_map *map);
-void				ft_key_left(t_map *map);
-void				ft_key_down(t_map *map);
-void				ft_key_up(t_map *map);
-void				ft_key_split(t_map *map);
-void				ft_key_color(t_map *map);
-void				ft_key_input(t_map *map);
 void				ft_key_space(t_map *map);
 void				ft_key_esc(t_map *map);
 
