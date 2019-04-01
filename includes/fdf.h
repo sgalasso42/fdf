@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 00:28:19 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 00:48:42 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct		s_map
 	int			color;
 }					t_map;
 
+void				gameloop(t_map *map);
 void				display_hud(t_map *map);
 void				make_frame(t_map *map);
 void				ft_error_exit(char *str, t_map *map);
@@ -94,9 +95,8 @@ int					ft_init_map(t_map *map);
 int					ft_get_map(t_map *map, char **argv);
 int					ft_check_map(t_map *map);
 void				ft_draw_line(t_pos *a, t_pos *b, t_map *map, int color);
-void				ft_set_grid(t_map *map);
+void				display_grid(t_map *map);
 void				ft_set_inputs(t_map *map);
-int					ft_display_grid(t_map *map);
 void				ft_free_grid(t_map *map);
 void				ft_free_map(t_map *map);
 
@@ -112,6 +112,6 @@ void				ft_calc_color_ac(t_vec *vec, t_map *map, int i, int j);
 void				ft_calc_color_cb(t_vec *vec, t_map *map, int i, int j);
 void				ft_calc_color_ad(t_vec *vec, t_map *map, int i, int j);
 
-int					ft_key(int key, t_map *map);
+int					ft_keyboard(int key, t_map *map);
 
 #endif

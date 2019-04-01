@@ -1,11 +1,19 @@
 #include "fdf.h"
 
+void    ft_calc_size_map(t_map *map)
+{
+	map->map_w = map->nb_x * map->size_bloc;
+	map->map_h = map->nb_y * ((map->size_bloc + 20) / 2);
+	(map->map_w > 1200) ? map->map_w = 1200 : 0;
+	(map->map_w < 800) ? map->map_w = 800 : 0;
+	(map->map_h > 800) ? map->map_h = 800 : 0;
+	(map->map_h < 500) ? map->map_h = 500 : 0;
+}
+
 void	ft_init_fdf(t_map *map)
 {
-	(void)map;
-	/*map->mlx_ptr = mlx_init();
+	map->mlx_ptr = mlx_init();
+	ft_calc_size_map(map);
 	map->win_ptr = mlx_new_window(map->mlx_ptr, map->map_w, map->map_h, "fdf");
 	mlx_do_key_autorepeaton(map->mlx_ptr);
-	mlx_hook(map->win_ptr, 2, 0, ft_key, map);
-	mlx_hook(map->win_ptr, 17, 0, ft_exit, map);*/
 }

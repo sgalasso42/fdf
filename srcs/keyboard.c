@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_key.c                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/13 19:26:45 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 00:28:13 by sgalasso         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/fdf.h"
 
 void	ft_key_esc(t_map *map)
@@ -28,7 +16,7 @@ void	ft_key_space(t_map *map)
 	map->z_height = 1;
 }
 
-int		ft_key(int key, t_map *map)
+int		ft_keyboard(int key, t_map *map)
 {
 	if (key == 53)
 		ft_key_esc(map);
