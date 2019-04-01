@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 00:04:45 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 00:28:19 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,5 @@ void				ft_calc_color_cb(t_vec *vec, t_map *map, int i, int j);
 void				ft_calc_color_ad(t_vec *vec, t_map *map, int i, int j);
 
 int					ft_key(int key, t_map *map);
-void				ft_key_z(int key, t_map *map);
-void				ft_key_minus(t_map *map);
-void				ft_key_plus(t_map *map);
-void				ft_key_space(t_map *map);
-void				ft_key_esc(t_map *map);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/29 16:22:07 by sgalasso          #+#    #+#              #
-#    Updated: 2019/04/02 00:04:50 by sgalasso         ###   ########.fr        #
+#    Updated: 2019/04/02 00:28:28 by sgalasso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,10 +26,7 @@ SRC = srcs/main.c \
 	  srcs/ft_coord_abcd.c \
 	  srcs/ft_calc_color.c \
 	  srcs/ft_display_grid.c \
-	  inputs/ft_key.c \
-	  inputs/ft_key_other.c \
-	  inputs/ft_key_z.c \
-	  inputs/ft_key_zoom.c \
+	  srcs/ft_key.c \
 
 OBJ = $(SRC:.c=.o)
 

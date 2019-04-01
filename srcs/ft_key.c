@@ -6,11 +6,27 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 19:26:45 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 00:05:23 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 00:28:13 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fdf.h"
+
+void	ft_key_esc(t_map *map)
+{
+	mlx_destroy_window(map->mlx_ptr, map->win_ptr);
+	ft_exit(map);
+}
+
+void	ft_key_space(t_map *map)
+{
+	map->params->tx = 0;
+	map->params->ty = 0;
+	map->params->split = 0;
+	map->params->colors = 0;
+	map->size_bloc = 40;
+	map->z_height = 1;
+}
 
 int		ft_key(int key, t_map *map)
 {
@@ -33,11 +49,13 @@ int		ft_key(int key, t_map *map)
 	else if (key == 124)
 		map->params->tx -= 16;
 	else if (key == 78)
-		ft_key_plus(map);
+		map->size_bloc -= 4;
 	else if (key == 69)
-		ft_key_minus(map);
-	else if (key == 67 || key == 75)
-		ft_key_z(key, map);
+		map->size_bloc += 4;
+	else if (key == 67)
+		map->z_height += 1;
+	else if (key == 75)
+		map->z_height -= 1;
 	make_frame(map);
 	return (0);
 }
