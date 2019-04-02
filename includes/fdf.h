@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 02:23:02 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 02:42:54 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,13 @@ typedef struct		s_pos
 	int y;
 }					t_pos;
 
-/*
-**	A---B
-**	|	|
-**	C---D
-*/
-
 typedef struct		s_vec
 {
 	t_pos	a;
 	t_pos	b;
 	t_pos	c;
-	t_pos	d;
 	int		color_ab;
 	int		color_ac;
-	int		color_cb;
-	int		color_ad;
 }					t_vec;
 
 typedef struct		s_params
@@ -57,13 +48,6 @@ typedef struct		s_params
 	int		tx;
 	int		ty;
 }					t_params;
-
-/*
-** - nb_x nb_y : nombre de noeuds
-** - size_bloc : distance entre les noeuds
-** - size_diag : valeur de dimension de la grille
-** - z_height  : coef de hauteur
-*/
 
 typedef struct		s_map
 {
@@ -91,7 +75,6 @@ void				ft_nbr_string_put(int x, int y, int nb, t_map *map);
 void				ft_init_fdf(t_map *map);
 int					ft_exit(t_map *map);
 int					*ft_intdup(t_map *map, int *src);
-int					ft_init_params(t_map *map);
 int					ft_init_map(t_map *map);
 int					ft_get_map(t_map *map, char **argv);
 int					ft_check_map(t_map *map);

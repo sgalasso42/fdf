@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/07/01 00:19:37 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 02:24:34 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 02:30:24 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,11 @@ int		ft_get_map(t_map *map, char **argv)
 	char	*line;
 
 	fd = 0;
-	if ((!ft_init_map(map)) || (!ft_init_params(map)))
+	ft_bzero(map, sizeof(t_map));
+	if (!(map->grid = (int **)(malloc(sizeof(int *) * 1))))
 		return (0);
+	map->size_bloc = 40;
+	map->z_height = 1;
 	if ((fd = open(argv[1], O_RDONLY)) == -1)
 	{
 		free(map->grid);
