@@ -26,6 +26,20 @@ void	ft_free_grid(t_map *map) // todel
 void	ft_free_map(t_map *map) // todel
 {
 	ft_free_grid(map);
-	free(map->params);
-	free(map->size_diag);
+}
+
+int		*ft_intdup(t_map *map, int *src)
+{
+	int		*cpy;
+	int		i;
+
+	i = 0;
+	if (!(cpy = (int *)malloc(sizeof(int) * (map->nb_x))))
+		return (0);
+	while (i < map->nb_x)
+	{
+		cpy[i] = src[i];
+		i++;
+	}
+	return (cpy);
 }
