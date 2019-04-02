@@ -12,8 +12,9 @@ void    ft_calc_size_map(t_map *map)
 
 void	ft_init_fdf(t_map *map)
 {
+	map->size_bloc = 40;
+	map->z_height = 1;
 	map->mlx_ptr = mlx_init();
 	ft_calc_size_map(map);
 	map->win_ptr = mlx_new_window(map->mlx_ptr, map->map_w, map->map_h, "fdf");
-	mlx_do_key_autorepeaton(map->mlx_ptr);
 }

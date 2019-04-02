@@ -6,13 +6,14 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/03 22:40:39 by sgalasso          #+#    #+#             */
-/*   Updated: 2018/09/10 16:56:27 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 03:58:00 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 10
+# define BUFF_SIZE 600
+# define BUFF_SIZE_MAX 500
 
 # include <unistd.h>
 # include <string.h>

@@ -15,6 +15,8 @@ void	ft_free_grid(t_map *map)
 	int i;
 
 	i = 0;
+	if (!map || !map->grid)
+		return ;
 	while (i < map->nb_y)
 		free(map->grid[i++]);
 	free(map->grid);

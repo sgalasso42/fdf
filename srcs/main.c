@@ -15,10 +15,17 @@ int		ft_exit(t_map *map)
 	exit(EXIT_SUCCESS);
 }
 
+// trucs a finir :
+// - check norme
+// - check parsing
+// - check Makefile recompile
+// - check header42
+
 int		main(int argc, char **argv)
 {
 	t_map	map;
 
+	ft_bzero(&map, sizeof(t_map));
 	if (argc != 2)
 		ft_error_exit("Fdf: error, bad args", &map);
 	ft_get_map(&map, argv);

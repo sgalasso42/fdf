@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 03:29:21 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 03:41:28 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void				ft_error_exit(char *str, t_map *map);
 void				ft_nbr_string_put(int x, int y, int nb, t_map *map);
 void				ft_init_fdf(t_map *map);
 int					ft_exit(t_map *map);
-int					ft_get_map(t_map *map, char **argv);
+void				ft_get_map(t_map *map, char **argv);
 void				ft_draw_line(t_pos *a, t_pos *b, t_map *map);
 void				display_grid(t_map *map);
 void				ft_set_inputs(t_map *map);
