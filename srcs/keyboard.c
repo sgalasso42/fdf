@@ -32,6 +32,8 @@ int		ft_keyboard(int key, t_map *map)
 		map->z_height += 1;
 	else if (key == 75)
 		map->z_height -= 1;
+	else if (key == 36)
+		map->params.isometric = (map->params.isometric) ? 0 : 1;
 	make_frame(map);
 	return (0);
 }

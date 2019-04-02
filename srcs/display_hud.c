@@ -7,9 +7,7 @@ void	ft_set_inputs(t_map *map)
 	mlx_string_put(map->mlx_ptr, map->win_ptr,
 	10, 40, 0xFFFFFF, "[i]             = inputs");
 	mlx_string_put(map->mlx_ptr, map->win_ptr,
-	10, 70, 0xFFFFFF, "[1!]            = split mode");
-	mlx_string_put(map->mlx_ptr, map->win_ptr,
-	10, 100, 0xFFFFFF, "[2@]            = colors");
+	10, 70, 0xFFFFFF, "[enter]         = projection");
 	mlx_string_put(map->mlx_ptr, map->win_ptr,
 	10, 130, 0xFFFFFF, "[+] [-]         = zoom");
 	mlx_string_put(map->mlx_ptr, map->win_ptr,
@@ -29,7 +27,7 @@ void	display_hud(t_map *map)
 	mlx_string_put(map->mlx_ptr, map->win_ptr, 10, 10, 0xFFFFFF, "FDF");
 	mlx_string_put(map->mlx_ptr, map->win_ptr, 10, 40, 0xFFFFFF, "keys    : [i]");
 	mlx_string_put(map->mlx_ptr, map->win_ptr, 10, 90, 0xFFFFFF, "view    :");
-	mlx_string_put(map->mlx_ptr, map->win_ptr, 110, 90, 0xFFFFFF, "isometric");
+	ft_nbr_string_put(110, 90, map->params.isometric, map);
 	mlx_string_put(map->mlx_ptr, map->win_ptr, 10, 130, 0xFFFFFF, "zoom    :");
 	ft_nbr_string_put(110, 130, map->size_bloc, map);
 	mlx_string_put(map->mlx_ptr, map->win_ptr, 10, 160, 0xFFFFFF, "delta z : ");

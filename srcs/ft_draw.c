@@ -16,7 +16,7 @@ void	ft_part1(t_pos *d, t_pos *pos, t_pos *inc, t_map *map)
 			cumul -= d->x;
 			pos->y += inc->y;
 		}
-		mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos->x, pos->y, map->color);
+		mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos->x, pos->y, 0xFFFFFF);
 		i++;
 	}
 }
@@ -37,15 +37,10 @@ void	ft_part2(t_pos *d, t_pos *pos, t_pos *inc, t_map *map)
 			cumul -= d->y;
 			pos->x += inc->x;
 		}
-		mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos->x, pos->y, map->color);
+		mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos->x, pos->y, 0xFFFFFF);
 		i++;
 	}
 }
-
-/*
-** - Fonction de tracage de droite
-** - Non affichage hors champs
-*/
 
 int		ft_abs(int val)
 {
@@ -54,12 +49,13 @@ int		ft_abs(int val)
 	return (val);
 }
 
-void	ft_draw_line(t_pos *a, t_pos *b, t_map *map, int color)
+void	ft_draw_line(t_pos *a, t_pos *b, t_map *map)
 {
 	t_pos	d;
 	t_pos	inc;
 	t_pos	pos;
 
+	// ceci fonctionne mais est pas joli : to refactor
 	if ((a->x < 0 || a->x > map->map_w || a->y < 0 || a->y > map->map_h)
 	&& (b->x < 0 || b->x > map->map_w || b->y < 0 || b->y > map->map_h))
 		if (!(a->y < 0 && b->y > map->map_h))
@@ -67,7 +63,6 @@ void	ft_draw_line(t_pos *a, t_pos *b, t_map *map, int color)
 				if (!(a->x < 0 && b->x > map->map_h))
 					if (!(b->x < 0 && a->x > map->map_h))
 						return ;
-	map->color = color;
 	pos.x = a->x;
 	pos.y = a->y;
 	d.x = b->x - a->x;
@@ -76,7 +71,7 @@ void	ft_draw_line(t_pos *a, t_pos *b, t_map *map, int color)
 	inc.y = (d.y > 0) ? 1 : -1;
 	d.x = ft_abs(d.x);
 	d.y = ft_abs(d.y);
-	mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos.x, pos.y, map->color);
+	mlx_pixel_put(map->mlx_ptr, map->win_ptr, pos.x, pos.y, 0xFFFFFF);
 	if (d.x > d.y)
 		ft_part1(&d, &pos, &inc, map);
 	else
