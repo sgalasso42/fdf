@@ -6,7 +6,7 @@
 #    By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/29 16:22:07 by sgalasso          #+#    #+#              #
-#    Updated: 2019/04/02 02:56:39 by sgalasso         ###   ########.fr        #
+#    Updated: 2019/04/02 03:18:17 by sgalasso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ SRC = srcs/main.c \
 	  srcs/ft_init_fdf.c \
 	  srcs/ft_get_map.c \
 	  srcs/ft_draw.c \
-	  srcs/ft_inputs.c \
 	  srcs/display_grid.c \
 	  srcs/keyboard.c \
 	  srcs/gameloop.c \

@@ -4,7 +4,6 @@ void	reset_params(t_map *map)
 {
 	map->params.tx = 0;
 	map->params.ty = 0;
-	map->params.colors = 0;
 	map->size_bloc = 40;
 	map->z_height = 1;
 }
@@ -17,8 +16,6 @@ int		ft_keyboard(int key, t_map *map)
 		reset_params(map);
 	else if (key == 34)
 		map->params.inputs = (map->params.inputs) ? 0 : 1;
-	else if (key == 19)
-		map->params.colors = (map->params.colors) ? 0 : 1;
 	else if (key == 125)
 		map->params.ty -= 16;
 	else if (key == 126)

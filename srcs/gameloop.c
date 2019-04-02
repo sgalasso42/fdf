@@ -3,8 +3,13 @@
 void		make_frame(t_map *map)
 {
 	mlx_clear_window(map->mlx_ptr, map->win_ptr);
-	display_hud(map);
-	display_grid(map);
+	if (map->params.inputs == 1)
+		ft_set_inputs(map);
+	else
+	{	
+		display_hud(map);
+		display_grid(map);
+	}
 }
 
 void		gameloop(t_map *map)

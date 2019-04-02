@@ -6,7 +6,7 @@
 /*   By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/29 16:24:22 by sgalasso          #+#    #+#             */
-/*   Updated: 2019/04/02 02:42:54 by sgalasso         ###   ########.fr       */
+/*   Updated: 2019/04/02 03:18:49 by sgalasso         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,6 @@
 # include "../minilibx_macos/mlx.h"
 # include <math.h>
 # include <stdio.h>
-
-# define R_MIN 89
-# define G_MIN 229
-# define B_MIN 99
-
-# define R_DELTA 14
-# define G_DELTA -14
-# define B_DELTA -1
 
 typedef struct		s_pos
 {
@@ -37,13 +29,10 @@ typedef struct		s_vec
 	t_pos	a;
 	t_pos	b;
 	t_pos	c;
-	int		color_ab;
-	int		color_ac;
 }					t_vec;
 
 typedef struct		s_params
 {
-	int		colors;
 	int		inputs;
 	int		tx;
 	int		ty;
