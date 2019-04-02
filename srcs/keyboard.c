@@ -1,12 +1,6 @@
 #include "../includes/fdf.h"
 
-void	ft_key_esc(t_map *map)
-{
-	mlx_destroy_window(map->mlx_ptr, map->win_ptr);
-	ft_exit(map);
-}
-
-void	ft_key_space(t_map *map)
+void	reset_params(t_map *map)
 {
 	map->params.tx = 0;
 	map->params.ty = 0;
@@ -18,9 +12,9 @@ void	ft_key_space(t_map *map)
 int		ft_keyboard(int key, t_map *map)
 {
 	if (key == 53)
-		ft_key_esc(map);
+		 ft_exit(map);
 	else if (key == 49)
-		ft_key_space(map);
+		reset_params(map);
 	else if (key == 34)
 		map->params.inputs = (map->params.inputs) ? 0 : 1;
 	else if (key == 19)

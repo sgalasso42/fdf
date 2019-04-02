@@ -6,11 +6,14 @@
 #    By: sgalasso <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/29 16:22:07 by sgalasso          #+#    #+#              #
-#    Updated: 2019/04/02 02:30:52 by sgalasso         ###   ########.fr        #
+#    Updated: 2019/04/02 02:56:39 by sgalasso         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fdf
+NAME 	=	fdf
+
+CC		=	gcc
+CFLAGS	=	-Wall -Wextra -Werror #-g -fsanitize=address
 
 SRC = srcs/main.c \
 	  srcs/display_hud.c \
@@ -32,14 +35,14 @@ MLX = -L ./minilibx_macos -l mlx -framework OpenGL -framework AppKit
 all: lib $(NAME)
 
 $(NAME):	$(OBJ)
-	gcc -Wall -Wextra -Werror -o $(NAME) libft/libft.a $(OBJ) -I $(INCLUDES) $(MLX)
+	$(CC) $(CFLAGS) -o $(NAME) libft/libft.a $(OBJ) -I $(INCLUDES) $(MLX)
 
 lib:
 	make -C libft/
 	make -C minilibx_macos/
 
 %.o: %.c $(INCLUDES)fdf.h Makefile
-	gcc -Wall -Wextra -Werror -o $@ -c $< -I $(INCLUDES)
+	$(CC) $(CFLAGS) -o $@ -c $< -I $(INCLUDES)
 
 clean:
 	rm -f $(OBJ) && make -C libft/ clean
